@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find camera-controller)/launch/estimate_position.launch" />  
+  <node name="demo" pkg="camera-controller_PoC2020iot"  type="demo.py" output="screen"/>
+</launch>

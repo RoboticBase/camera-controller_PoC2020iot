@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find camera-controller_PoC2020iot)/launch/3-1_detect_error_position.launch" />
+  <include file="$(find alert_player)/launch/alert_player.launch" />
+</launch>
