@@ -10,7 +10,7 @@
 
 ## テストケース1:マーカ位置推定精度の検証
 1. ロボットを各ポイントに移動させ、位置情報を保存
- - `roslaunch rpl 1-1_capture_position.launch`を起動
+ - `roslaunch camera-controller_PoC2020iot 1-1_capture_position.launch`を起動
  - `rostopic pub /AR/create std_msgs/String "data: 'record'"`で画像と位置情報を保存
 2. 床座標からfloor.csvと変換行列を作成
  - `python ./scripts/1-2_create_truevalue.py`を内部パラメータを変えて実行(floor.csvを出力)
