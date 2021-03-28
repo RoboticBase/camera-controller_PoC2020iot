@@ -1,0 +1,11 @@
+<launch>
+  <param name="calibration_path" value="$(find camera-controller)/config/camera.xml" />
+  <param name="file_path" value="$(find camera-controller_PoC2020iot)/config/source_position/"/>
+  <param name="meter_threshold" type="double"    value="0.2"/>
+  <param name="degree_threshold" type="double"    value="10.0"/>
+  <node name="detect_error_position" pkg="camera-controller_PoC2020iot" type="detect_error_position.py" output="screen">
+    <param name="coutup" type="int"    value="0"/>
+    <param name="count_threshold" type="int"    value="10"/>
+  </node>
+
+</launch>
