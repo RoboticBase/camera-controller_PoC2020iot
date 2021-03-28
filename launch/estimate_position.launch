@@ -1,0 +1,15 @@
+<launch>
+  <param name="device_id" value="0"/>
+  <param name="calibration_path" value="$(find camera-controller)/config/camera.xml" />
+  <param name="file_path" value="$(find camera-controller_PoC2020iot)/config/source_position/"/>
+  <param name="slop_ms" type="double"    value="1000.0"/>
+  <param name="matrix_path" value="$(find camera-controller_PoC2020iot)/config/source_position/Pose_2020-12-11_162050/"/>
+
+  <node name="camera" pkg="camera-controller" type="camera.py" output="screen"/>
+  <node name="ar" pkg="camera-controller" type="ar_detector.py" output="screen"/>
+  <node name="estimate_ar_position" pkg="camera-controller_PoC2020iot" type="estimate_ar_position.py" output="screen"/>
+  <node name="estimate_rb_position" pkg="camera-controller_PoC2020iot" type="estimate_rb_position.py" output="screen"/>
+
+  <node name="pose_integrator" pkg="camera-controller_PoC2020iot" type="pose_integrator.py" output="screen"/>
+  <node name="pose_confusion" pkg="camera-controller_PoC2020iot"  type="pose_confusion.py" output="screen"/>
+</launch>
