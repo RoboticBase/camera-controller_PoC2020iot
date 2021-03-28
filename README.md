@@ -3,7 +3,7 @@
 1. カメラの事前準備
    1. 天井にカメラ2台を設置
    2. 座標の中心をマーキング
-      1. window 1: `roslaunch rpl 0-1_centerImage.launch`
+      1. window 1: `roslaunch camera-controller_PoC2020iot 0-1_centerImage.launch`
    3. 中心位置から半径1.5m(可能であれば2m)を50cm感覚でマーキング
    4. 中心位置にロボットの初期位置をマーキング(ロボットから見て右向き)
 2. ロボットで地図を生成
