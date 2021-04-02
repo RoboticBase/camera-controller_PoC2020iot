@@ -3,9 +3,9 @@
 1. カメラの事前準備
    1. 天井にカメラ2台を設置
    2. 座標の中心をマーキング
-      1. window 1: `roslaunch camera-controller_PoC2020iot 0-1_centerImage.launch`
-   3. 中心位置から半径1.5m(可能であれば2m)を50cm感覚でマーキング
-   4. 中心位置にロボットの初期位置をマーキング(ロボットから見て右向き)
+      1. `roslaunch camera-controller_PoC2020iot 0-1_centerImage.launch`
+   3. 中心位置から半径1.5mを50cm感覚でマーキング
+   4. 中心位置にロボットの初期位置をマーキング
 2. ロボットで地図を生成
 
 ## テストケース1:マーカ位置推定精度の検証
@@ -15,9 +15,9 @@
 2. 床座標からfloor.csvと変換行列を作成
  - `python ./scripts/1-2_create_truevalue.py`を内部パラメータを変えて実行(floor.csvを出力)
  - `python ./scripts/1-3_create_transMatrix.py`を内部のパラメータを変えて実行(変換行列と比較結果のcsvを出力)
-3. ※各位置情報をプロット、統計を取り信頼区間を導出
+3. 各位置情報をプロット、統計を取り信頼区間を導出
 
-## テストケース2:※
+## テストケース2:
 1. ロボットを初期位置へ移動させ位置推定を開始
  - `roslaunch camera-controller_PoC2020iot estimate_position.launch`をパラメータを変えて起動
 3. ロボットの移動履歴を保存
@@ -26,9 +26,9 @@
    2. ロボットへWPを渡し、移動指示
        1. `rosrun camera-controller_PoC2020iot minimini2_command.py`をパラメータを変えて起動（WPと実行指示）
        2. `rostopic pub /command/control eams_msgs/Control "{header: auto, command: 1}"`
-   3. ※マーカ座標とロボット座標を比較
+   3. マーカ座標とロボット座標を比較
 
-## テストケース3:※
+## テストケース3:
 1. ローカル上で誤り検出
    1. ロボットを初期位置へ移動させ位置推定を開始
        - `roslaunch camera-controller_PoC2020iot estimate_position.launch`をパラメータを変えて起動
